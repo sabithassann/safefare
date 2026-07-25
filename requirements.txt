@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+email-validator
+pydantic-settings
+PyMuPDF
+Pillow
+matplotlib
