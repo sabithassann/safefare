@@ -874,7 +874,49 @@ input:focus, textarea:focus {
 .toast.success { border-color: var(--success); border-left-width: 4px; }
 .toast.error { border-color: var(--danger); border-left-width: 4px; }
 
+/* Autocomplete Dropdowns */
+.autocomplete-wrapper {
+  position: relative;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 50;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.suggestion-item {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.12s ease;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background: var(--primary-glow);
+  color: #60a5fa;
+}
+
+.suggestion-item .match-highlight {
+  font-weight: 700;
+  color: #38bdf8;
+}
+
 @keyframes slideIn {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+

@@ -1905,10 +1905,10 @@
         "height": 24
       },
       "fare_box": {
-        "x": 1283,
-        "y": 413,
-        "width": 177,
-        "height": 170
+        "x": 958,
+        "y": 661,
+        "width": 70,
+        "height": 35
       },
       "is_mapped": true
     },

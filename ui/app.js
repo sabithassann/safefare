@@ -734,7 +734,7 @@ async function checkExistingRoutes() {
 }
 
 // -------------------------------------------------------------
-// Fare Search Tester Modal Logic
+// Fare Search Tester Modal Logic with Autocomplete
 // -------------------------------------------------------------
 const btnOpenSearchModal = document.getElementById('btnOpenSearchModal');
 const fareSearchModal = document.getElementById('fareSearchModal');
@@ -742,6 +742,8 @@ const btnCloseSearchModal = document.getElementById('btnCloseSearchModal');
 const fareSearchForm = document.getElementById('fareSearchForm');
 const searchSource = document.getElementById('searchSource');
 const searchDest = document.getElementById('searchDest');
+const sourceSuggestions = document.getElementById('sourceSuggestions');
+const destSuggestions = document.getElementById('destSuggestions');
 const searchResultsCard = document.getElementById('searchResultsCard');
 const resPairTitle = document.getElementById('resPairTitle');
 const resFareAmount = document.getElementById('resFareAmount');
@@ -753,18 +755,119 @@ if (btnOpenSearchModal) {
   btnOpenSearchModal.addEventListener('click', () => {
     fareSearchModal.classList.remove('hidden');
     searchSource.focus();
+    fetchStopsAndSuggest(searchSource, sourceSuggestions, '');
   });
 }
 
 if (btnCloseSearchModal) {
   btnCloseSearchModal.addEventListener('click', () => {
     fareSearchModal.classList.add('hidden');
+    hideAllSuggestions();
   });
 }
+
+function hideAllSuggestions() {
+  if (sourceSuggestions) sourceSuggestions.classList.add('hidden');
+  if (destSuggestions) destSuggestions.classList.add('hidden');
+}
+
+// Autocomplete Setup Function
+function setupAutocomplete(inputElem, dropdownElem) {
+  let debounceTimer = null;
+
+  inputElem.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    const query = e.target.value.trim();
+    debounceTimer = setTimeout(() => {
+      fetchStopsAndSuggest(inputElem, dropdownElem, query);
+    }, 150);
+  });
+
+  inputElem.addEventListener('focus', () => {
+    fetchStopsAndSuggest(inputElem, dropdownElem, inputElem.value.trim());
+  });
+
+  inputElem.addEventListener('keydown', (e) => {
+    const items = dropdownElem.querySelectorAll('.suggestion-item');
+    if (items.length === 0 || dropdownElem.classList.contains('hidden')) return;
+
+    let activeIdx = Array.from(items).findIndex(i => i.classList.contains('active'));
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (activeIdx >= 0) items[activeIdx].classList.remove('active');
+      activeIdx = (activeIdx + 1) % items.length;
+      items[activeIdx].classList.add('active');
+      items[activeIdx].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (activeIdx >= 0) items[activeIdx].classList.remove('active');
+      activeIdx = (activeIdx - 1 + items.length) % items.length;
+      items[activeIdx].classList.add('active');
+      items[activeIdx].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter') {
+      if (activeIdx >= 0) {
+        e.preventDefault();
+        items[activeIdx].click();
+      }
+    } else if (e.key === 'Escape') {
+      dropdownElem.classList.add('hidden');
+    }
+  });
+}
+
+async function fetchStopsAndSuggest(inputElem, dropdownElem, query) {
+  try {
+    const url = query ? `${API_BASE}/fares/stops?q=${encodeURIComponent(query)}` : `${API_BASE}/fares/stops`;
+    const res = await fetch(url);
+    if (!res.ok) return;
+    const stops = await res.json();
+
+    if (stops.length === 0) {
+      dropdownElem.innerHTML = '<div class="suggestion-item" style="color: var(--text-dim); cursor: default;">No matching stops found</div>';
+      dropdownElem.classList.remove('hidden');
+      return;
+    }
+
+    dropdownElem.innerHTML = stops.slice(0, 10).map(stop => {
+      let highlighted = escapeHtml(stop);
+      if (query) {
+        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        highlighted = highlighted.replace(regex, '<span class="match-highlight">$1</span>');
+      }
+      return `<div class="suggestion-item" data-value="${escapeHtml(stop)}">${highlighted}</div>`;
+    }).join('');
+
+    dropdownElem.classList.remove('hidden');
+
+    dropdownElem.querySelectorAll('.suggestion-item[data-value]').forEach(item => {
+      item.addEventListener('mousedown', (e) => {
+        e.preventDefault(); // Prevent input blur
+        inputElem.value = item.dataset.value;
+        dropdownElem.classList.add('hidden');
+        if (inputElem === searchSource) {
+          searchDest.focus();
+        }
+      });
+    });
+  } catch (err) {
+    console.error("Autocomplete error:", err);
+  }
+}
+
+if (searchSource && sourceSuggestions) setupAutocomplete(searchSource, sourceSuggestions);
+if (searchDest && destSuggestions) setupAutocomplete(searchDest, destSuggestions);
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.autocomplete-wrapper')) {
+    hideAllSuggestions();
+  }
+});
 
 if (fareSearchForm) {
   fareSearchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    hideAllSuggestions();
     const src = searchSource.value.trim();
     const dest = searchDest.value.trim();
     if (!src || !dest) return;
@@ -829,4 +932,5 @@ function escapeHtml(str) {
   if (!str) return '';
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
+
 

@@ -78,6 +78,42 @@ def calculate_fare(source: str, destination: str, route_name: Optional[str] = No
     )
 
 
+def get_stop_suggestions(query: Optional[str] = None) -> list[str]:
+    """
+    Returns unique list of stop names across all registered routes, optionally filtered by query.
+    """
+    if not os.path.exists(ROUTES_DIR):
+        return []
+
+    unique_stops = set()
+    route_files = [
+        f for f in glob.glob(os.path.join(ROUTES_DIR, "*.json"))
+        if not f.endswith("index.json")
+    ]
+
+    for file_path in route_files:
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                route_data = json.load(f)
+            for stop in route_data.get("stops", []):
+                name = stop.get("name", "").strip()
+                if name:
+                    unique_stops.add(name)
+        except Exception:
+            continue
+
+    all_stops = sorted(list(unique_stops))
+    if not query or not query.strip():
+        return all_stops
+
+    q = _normalize(query)
+    # Return prefix matches first, then substring matches
+    prefix_matches = [s for s in all_stops if _normalize(s).startswith(q)]
+    sub_matches = [s for s in all_stops if q in _normalize(s) and s not in prefix_matches]
+    return prefix_matches + sub_matches
+
+
+
 if __name__ == "__main__":
     import pprint
     print("Testing calculate_fare()...")
