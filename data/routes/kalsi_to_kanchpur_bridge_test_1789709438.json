@@ -1,0 +1,2252 @@
+{
+  "route_id": "kalsi_to_kanchpur_bridge_test_1789709438",
+  "route_name": "Kalsi to Kanchpur Bridge Test",
+  "route_number": "A-101",
+  "rate_per_km": 2.5,
+  "min_fare": 10.0,
+  "pdf_filename": "chartfare.pdf",
+  "total_stops": 13,
+  "total_cells": 78,
+  "mapped_cells": 78,
+  "created_at": "2026-09-18T11:30:38.879224",
+  "stops": [
+    {
+      "id": 1,
+      "name": "Kalsi"
+    },
+    {
+      "id": 2,
+      "name": "Mirpur-12"
+    },
+    {
+      "id": 3,
+      "name": "Mirpur-10"
+    },
+    {
+      "id": 4,
+      "name": "Kazipara"
+    },
+    {
+      "id": 5,
+      "name": "Shewrapara"
+    },
+    {
+      "id": 6,
+      "name": "Farmgate"
+    },
+    {
+      "id": 7,
+      "name": "Shahbag"
+    },
+    {
+      "id": 8,
+      "name": "Paltan"
+    },
+    {
+      "id": 9,
+      "name": "Gulistan"
+    },
+    {
+      "id": 10,
+      "name": "Tikatuli"
+    },
+    {
+      "id": 11,
+      "name": "Jatrabari"
+    },
+    {
+      "id": 12,
+      "name": "Signboard"
+    },
+    {
+      "id": 13,
+      "name": "Kanchpur Bridge"
+    }
+  ],
+  "cells": [
+    {
+      "cell_id": "1_2",
+      "source_stop_id": 1,
+      "destination_stop_id": 2,
+      "source_name": "Kalsi",
+      "destination_name": "Mirpur-12",
+      "amount": 10.0,
+      "distance_km": 2.2,
+      "source_box": {
+        "x": 455,
+        "y": 380,
+        "width": 68,
+        "height": 27
+      },
+      "destination_box": {
+        "x": 531,
+        "y": 384,
+        "width": 79,
+        "height": 19
+      },
+      "fare_box": {
+        "x": 1051,
+        "y": 357,
+        "width": 117,
+        "height": 101
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_3",
+      "source_stop_id": 1,
+      "destination_stop_id": 3,
+      "source_name": "Kalsi",
+      "destination_name": "Mirpur-10",
+      "amount": 12.0,
+      "distance_km": 4.7,
+      "source_box": {
+        "x": 453,
+        "y": 408,
+        "width": 69,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 598,
+        "y": 409,
+        "width": 79,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 990,
+        "y": 348,
+        "width": 120,
+        "height": 100
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_4",
+      "source_stop_id": 1,
+      "destination_stop_id": 4,
+      "source_name": "Kalsi",
+      "destination_name": "Kazipara",
+      "amount": 15.0,
+      "distance_km": 6.1,
+      "source_box": {
+        "x": 455,
+        "y": 435,
+        "width": 70,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 670,
+        "y": 436,
+        "width": 75,
+        "height": 29
+      },
+      "fare_box": {
+        "x": 939,
+        "y": 340,
+        "width": 150,
+        "height": 124
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_5",
+      "source_stop_id": 1,
+      "destination_stop_id": 5,
+      "source_name": "Kalsi",
+      "destination_name": "Shewrapara",
+      "amount": 17.0,
+      "distance_km": 6.8,
+      "source_box": {
+        "x": 453,
+        "y": 468,
+        "width": 69,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 745,
+        "y": 466,
+        "width": 90,
+        "height": 27
+      },
+      "fare_box": {
+        "x": 957,
+        "y": 340,
+        "width": 115,
+        "height": 118
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_6",
+      "source_stop_id": 1,
+      "destination_stop_id": 6,
+      "source_name": "Kalsi",
+      "destination_name": "Farmgate",
+      "amount": 29.0,
+      "distance_km": 11.4,
+      "source_box": {
+        "x": 454,
+        "y": 495,
+        "width": 68,
+        "height": 27
+      },
+      "destination_box": {
+        "x": 817,
+        "y": 498,
+        "width": 67,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 967,
+        "y": 368,
+        "width": 141,
+        "height": 109
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_7",
+      "source_stop_id": 1,
+      "destination_stop_id": 7,
+      "source_name": "Kalsi",
+      "destination_name": "Shahbag",
+      "amount": 35.0,
+      "distance_km": 13.7,
+      "source_box": {
+        "x": 455,
+        "y": 527,
+        "width": 70,
+        "height": 20
+      },
+      "destination_box": {
+        "x": 887,
+        "y": 523,
+        "width": 61,
+        "height": 26
+      },
+      "fare_box": {
+        "x": 932,
+        "y": 354,
+        "width": 140,
+        "height": 113
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_8",
+      "source_stop_id": 1,
+      "destination_stop_id": 8,
+      "source_name": "Kalsi",
+      "destination_name": "Paltan",
+      "amount": 39.0,
+      "distance_km": 15.6,
+      "source_box": {
+        "x": 455,
+        "y": 552,
+        "width": 66,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 959,
+        "y": 553,
+        "width": 68,
+        "height": 26
+      },
+      "fare_box": {
+        "x": 935,
+        "y": 373,
+        "width": 183,
+        "height": 107
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_9",
+      "source_stop_id": 1,
+      "destination_stop_id": 9,
+      "source_name": "Kalsi",
+      "destination_name": "Gulistan",
+      "amount": 42.0,
+      "distance_km": 16.6,
+      "source_box": {
+        "x": 455,
+        "y": 582,
+        "width": 67,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1034,
+        "y": 580,
+        "width": 71,
+        "height": 25
+      },
+      "fare_box": {
+        "x": 948,
+        "y": 350,
+        "width": 146,
+        "height": 127
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_10",
+      "source_stop_id": 1,
+      "destination_stop_id": 10,
+      "source_name": "Kalsi",
+      "destination_name": "Tikatuli",
+      "amount": 45.0,
+      "distance_km": 17.8,
+      "source_box": {
+        "x": 452,
+        "y": 610,
+        "width": 71,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1104,
+        "y": 611,
+        "width": 72,
+        "height": 25
+      },
+      "fare_box": {
+        "x": 987,
+        "y": 361,
+        "width": 108,
+        "height": 97
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_11",
+      "source_stop_id": 1,
+      "destination_stop_id": 11,
+      "source_name": "Kalsi",
+      "destination_name": "Jatrabari",
+      "amount": 50.0,
+      "distance_km": 19.9,
+      "source_box": {
+        "x": 455,
+        "y": 667,
+        "width": 65,
+        "height": 28
+      },
+      "destination_box": {
+        "x": 1244,
+        "y": 668,
+        "width": 81,
+        "height": 25
+      },
+      "fare_box": {
+        "x": 1005,
+        "y": 418,
+        "width": 125,
+        "height": 97
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_12",
+      "source_stop_id": 1,
+      "destination_stop_id": 12,
+      "source_name": "Kalsi",
+      "destination_name": "Signboard",
+      "amount": 63.0,
+      "distance_km": 24.8,
+      "source_box": {
+        "x": 453,
+        "y": 697,
+        "width": 66,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1312,
+        "y": 700,
+        "width": 77,
+        "height": 18
+      },
+      "fare_box": {
+        "x": 938,
+        "y": 341,
+        "width": 160,
+        "height": 131
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "1_13",
+      "source_stop_id": 1,
+      "destination_stop_id": 13,
+      "source_name": "Kalsi",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 73.0,
+      "distance_km": 28.8,
+      "source_box": {
+        "x": 452,
+        "y": 725,
+        "width": 70,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 1378,
+        "y": 724,
+        "width": 86,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 992,
+        "y": 353,
+        "width": 122,
+        "height": 119
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_3",
+      "source_stop_id": 2,
+      "destination_stop_id": 3,
+      "source_name": "Mirpur-12",
+      "destination_name": "Mirpur-10",
+      "amount": 10.0,
+      "distance_km": 2.2,
+      "source_box": {
+        "x": 526,
+        "y": 411,
+        "width": 69,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 602,
+        "y": 412,
+        "width": 80,
+        "height": 21
+      },
+      "fare_box": {
+        "x": 1047,
+        "y": 334,
+        "width": 131,
+        "height": 135
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_4",
+      "source_stop_id": 2,
+      "destination_stop_id": 4,
+      "source_name": "Mirpur-12",
+      "destination_name": "Kazipara",
+      "amount": 36.0,
+      "distance_km": 2.2,
+      "source_box": {
+        "x": 526,
+        "y": 438,
+        "width": 71,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 673,
+        "y": 440,
+        "width": 78,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 962,
+        "y": 328,
+        "width": 103,
+        "height": 111
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_5",
+      "source_stop_id": 2,
+      "destination_stop_id": 5,
+      "source_name": "Mirpur-12",
+      "destination_name": "Shewrapara",
+      "amount": 12.0,
+      "distance_km": 3.3,
+      "source_box": {
+        "x": 525,
+        "y": 466,
+        "width": 72,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 744,
+        "y": 466,
+        "width": 93,
+        "height": 26
+      },
+      "fare_box": {
+        "x": 982,
+        "y": 353,
+        "width": 115,
+        "height": 123
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_6",
+      "source_stop_id": 2,
+      "destination_stop_id": 6,
+      "source_name": "Mirpur-12",
+      "destination_name": "Farmgate",
+      "amount": 23.0,
+      "distance_km": 6.8,
+      "source_box": {
+        "x": 525,
+        "y": 495,
+        "width": 68,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 818,
+        "y": 496,
+        "width": 64,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 969,
+        "y": 363,
+        "width": 113,
+        "height": 100
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_7",
+      "source_stop_id": 2,
+      "destination_stop_id": 7,
+      "source_name": "Mirpur-12",
+      "destination_name": "Shahbag",
+      "amount": 29.0,
+      "distance_km": 11.5,
+      "source_box": {
+        "x": 522,
+        "y": 524,
+        "width": 73,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 887,
+        "y": 525,
+        "width": 64,
+        "height": 23
+      },
+      "fare_box": {
+        "x": 878,
+        "y": 362,
+        "width": 227,
+        "height": 90
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_8",
+      "source_stop_id": 2,
+      "destination_stop_id": 8,
+      "source_name": "Mirpur-12",
+      "destination_name": "Paltan",
+      "amount": 34.0,
+      "distance_km": 13.7,
+      "source_box": {
+        "x": 525,
+        "y": 555,
+        "width": 68,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 962,
+        "y": 553,
+        "width": 65,
+        "height": 20
+      },
+      "fare_box": {
+        "x": 940,
+        "y": 351,
+        "width": 147,
+        "height": 137
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_9",
+      "source_stop_id": 2,
+      "destination_stop_id": 9,
+      "source_name": "Mirpur-12",
+      "destination_name": "Gulistan",
+      "amount": 36.0,
+      "distance_km": 15.6,
+      "source_box": {
+        "x": 525,
+        "y": 579,
+        "width": 69,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 1033,
+        "y": 580,
+        "width": 66,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 936,
+        "y": 368,
+        "width": 124,
+        "height": 94
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_10",
+      "source_stop_id": 2,
+      "destination_stop_id": 10,
+      "source_name": "Mirpur-12",
+      "destination_name": "Tikatuli",
+      "amount": 39.0,
+      "distance_km": 7.8,
+      "source_box": {
+        "x": 522,
+        "y": 609,
+        "width": 74,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 1106,
+        "y": 609,
+        "width": 69,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 955,
+        "y": 344,
+        "width": 128,
+        "height": 108
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_11",
+      "source_stop_id": 2,
+      "destination_stop_id": 11,
+      "source_name": "Mirpur-12",
+      "destination_name": "Jatrabari",
+      "amount": 44.5,
+      "distance_km": 18.9,
+      "source_box": {
+        "x": 525,
+        "y": 666,
+        "width": 70,
+        "height": 27
+      },
+      "destination_box": {
+        "x": 1244,
+        "y": 667,
+        "width": 73,
+        "height": 23
+      },
+      "fare_box": {
+        "x": 1072,
+        "y": 388,
+        "width": 149,
+        "height": 118
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_12",
+      "source_stop_id": 2,
+      "destination_stop_id": 12,
+      "source_name": "Mirpur-12",
+      "destination_name": "Signboard",
+      "amount": 63.0,
+      "distance_km": 19.9,
+      "source_box": {
+        "x": 524,
+        "y": 698,
+        "width": 69,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1312,
+        "y": 697,
+        "width": 88,
+        "height": 25
+      },
+      "fare_box": {
+        "x": 1030,
+        "y": 355,
+        "width": 164,
+        "height": 92
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "2_13",
+      "source_stop_id": 2,
+      "destination_stop_id": 13,
+      "source_name": "Mirpur-12",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 67.0,
+      "distance_km": 24.8,
+      "source_box": {
+        "x": 522,
+        "y": 725,
+        "width": 73,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1380,
+        "y": 723,
+        "width": 87,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 1163,
+        "y": 409,
+        "width": 217,
+        "height": 133
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_4",
+      "source_stop_id": 3,
+      "destination_stop_id": 4,
+      "source_name": "Mirpur-10",
+      "destination_name": "Kazipara",
+      "amount": 10.0,
+      "distance_km": 2.0,
+      "source_box": {
+        "x": 599,
+        "y": 436,
+        "width": 69,
+        "height": 28
+      },
+      "destination_box": {
+        "x": 674,
+        "y": 440,
+        "width": 75,
+        "height": 21
+      },
+      "fare_box": {
+        "x": 1167,
+        "y": 410,
+        "width": 164,
+        "height": 144
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_5",
+      "source_stop_id": 3,
+      "destination_stop_id": 5,
+      "source_name": "Mirpur-10",
+      "destination_name": "Shewrapara",
+      "amount": 10.0,
+      "distance_km": 3.1,
+      "source_box": {
+        "x": 601,
+        "y": 468,
+        "width": 68,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 744,
+        "y": 469,
+        "width": 92,
+        "height": 23
+      },
+      "fare_box": {
+        "x": 1096,
+        "y": 334,
+        "width": 167,
+        "height": 142
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_6",
+      "source_stop_id": 3,
+      "destination_stop_id": 6,
+      "source_name": "Mirpur-10",
+      "destination_name": "Farmgate",
+      "amount": 17.0,
+      "distance_km": 3.3,
+      "source_box": {
+        "x": 599,
+        "y": 496,
+        "width": 72,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 822,
+        "y": 496,
+        "width": 59,
+        "height": 23
+      },
+      "fare_box": {
+        "x": 1139,
+        "y": 358,
+        "width": 163,
+        "height": 184
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_7",
+      "source_stop_id": 3,
+      "destination_stop_id": 7,
+      "source_name": "Mirpur-10",
+      "destination_name": "Shahbag",
+      "amount": 23.0,
+      "distance_km": 4.1,
+      "source_box": {
+        "x": 595,
+        "y": 526,
+        "width": 69,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 885,
+        "y": 525,
+        "width": 73,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 1079,
+        "y": 354,
+        "width": 207,
+        "height": 123
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_8",
+      "source_stop_id": 3,
+      "destination_stop_id": 8,
+      "source_name": "Mirpur-10",
+      "destination_name": "Paltan",
+      "amount": 28.0,
+      "distance_km": 5.2,
+      "source_box": {
+        "x": 599,
+        "y": 554,
+        "width": 69,
+        "height": 27
+      },
+      "destination_box": {
+        "x": 959,
+        "y": 554,
+        "width": 63,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 1085,
+        "y": 340,
+        "width": 165,
+        "height": 174
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_9",
+      "source_stop_id": 3,
+      "destination_stop_id": 9,
+      "source_name": "Mirpur-10",
+      "destination_name": "Gulistan",
+      "amount": 30.0,
+      "distance_km": 6.2,
+      "source_box": {
+        "x": 598,
+        "y": 579,
+        "width": 69,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 1031,
+        "y": 579,
+        "width": 68,
+        "height": 27
+      },
+      "fare_box": {
+        "x": 1112,
+        "y": 327,
+        "width": 165,
+        "height": 141
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_10",
+      "source_stop_id": 3,
+      "destination_stop_id": 10,
+      "source_name": "Mirpur-10",
+      "destination_name": "Tikatuli",
+      "amount": 33.0,
+      "distance_km": 7.2,
+      "source_box": {
+        "x": 599,
+        "y": 610,
+        "width": 68,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1105,
+        "y": 609,
+        "width": 69,
+        "height": 27
+      },
+      "fare_box": {
+        "x": 1123,
+        "y": 355,
+        "width": 227,
+        "height": 153
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_11",
+      "source_stop_id": 3,
+      "destination_stop_id": 11,
+      "source_name": "Mirpur-10",
+      "destination_name": "Jatrabari",
+      "amount": 38.0,
+      "distance_km": 8.2,
+      "source_box": {
+        "x": 595,
+        "y": 697,
+        "width": 69,
+        "height": 22
+      },
+      "destination_box": {
+        "x": 1242,
+        "y": 666,
+        "width": 79,
+        "height": 30
+      },
+      "fare_box": {
+        "x": 1111,
+        "y": 345,
+        "width": 199,
+        "height": 203
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_12",
+      "source_stop_id": 3,
+      "destination_stop_id": 12,
+      "source_name": "Mirpur-10",
+      "destination_name": "Signboard",
+      "amount": 51.0,
+      "distance_km": 9.1,
+      "source_box": {
+        "x": 601,
+        "y": 698,
+        "width": 64,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1313,
+        "y": 698,
+        "width": 82,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1111,
+        "y": 368,
+        "width": 182,
+        "height": 184
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "3_13",
+      "source_stop_id": 3,
+      "destination_stop_id": 13,
+      "source_name": "Mirpur-10",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 61.0,
+      "distance_km": 10.1,
+      "source_box": {
+        "x": 598,
+        "y": 725,
+        "width": 68,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1378,
+        "y": 726,
+        "width": 91,
+        "height": 29
+      },
+      "fare_box": {
+        "x": 1164,
+        "y": 331,
+        "width": 236,
+        "height": 148
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_5",
+      "source_stop_id": 4,
+      "destination_stop_id": 5,
+      "source_name": "Kazipara",
+      "destination_name": "Shewrapara",
+      "amount": 10.0,
+      "distance_km": 2.0,
+      "source_box": {
+        "x": 669,
+        "y": 465,
+        "width": 74,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 748,
+        "y": 470,
+        "width": 94,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 1184,
+        "y": 344,
+        "width": 241,
+        "height": 169
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_6",
+      "source_stop_id": 4,
+      "destination_stop_id": 6,
+      "source_name": "Kazipara",
+      "destination_name": "Farmgate",
+      "amount": 13.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 670,
+        "y": 497,
+        "width": 69,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 814,
+        "y": 496,
+        "width": 68,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1216,
+        "y": 345,
+        "width": 142,
+        "height": 177
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_7",
+      "source_stop_id": 4,
+      "destination_stop_id": 7,
+      "source_name": "Kazipara",
+      "destination_name": "Shahbag",
+      "amount": 19.0,
+      "distance_km": 4.0,
+      "source_box": {
+        "x": 670,
+        "y": 526,
+        "width": 67,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 886,
+        "y": 525,
+        "width": 65,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1196,
+        "y": 350,
+        "width": 190,
+        "height": 164
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_8",
+      "source_stop_id": 4,
+      "destination_stop_id": 8,
+      "source_name": "Kazipara",
+      "destination_name": "Paltan",
+      "amount": 24.0,
+      "distance_km": 5.0,
+      "source_box": {
+        "x": 670,
+        "y": 551,
+        "width": 72,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 960,
+        "y": 553,
+        "width": 55,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1172,
+        "y": 370,
+        "width": 320,
+        "height": 157
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_9",
+      "source_stop_id": 4,
+      "destination_stop_id": 9,
+      "source_name": "Kazipara",
+      "destination_name": "Gulistan",
+      "amount": 27.0,
+      "distance_km": 6.0,
+      "source_box": {
+        "x": 672,
+        "y": 578,
+        "width": 69,
+        "height": 27
+      },
+      "destination_box": {
+        "x": 1030,
+        "y": 581,
+        "width": 67,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 1186,
+        "y": 337,
+        "width": 282,
+        "height": 199
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_10",
+      "source_stop_id": 4,
+      "destination_stop_id": 10,
+      "source_name": "Kazipara",
+      "destination_name": "Tikatuli",
+      "amount": 30.0,
+      "distance_km": 7.0,
+      "source_box": {
+        "x": 670,
+        "y": 611,
+        "width": 70,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1106,
+        "y": 610,
+        "width": 63,
+        "height": 25
+      },
+      "fare_box": {
+        "x": 1209,
+        "y": 343,
+        "width": 248,
+        "height": 149
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_11",
+      "source_stop_id": 4,
+      "destination_stop_id": 11,
+      "source_name": "Kazipara",
+      "destination_name": "Jatrabari",
+      "amount": 35.0,
+      "distance_km": 8.0,
+      "source_box": {
+        "x": 673,
+        "y": 666,
+        "width": 68,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 1244,
+        "y": 666,
+        "width": 72,
+        "height": 25
+      },
+      "fare_box": {
+        "x": 1196,
+        "y": 358,
+        "width": 244,
+        "height": 173
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_12",
+      "source_stop_id": 4,
+      "destination_stop_id": 12,
+      "source_name": "Kazipara",
+      "destination_name": "Signboard",
+      "amount": 47.0,
+      "distance_km": 9.0,
+      "source_box": {
+        "x": 672,
+        "y": 694,
+        "width": 68,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 1312,
+        "y": 697,
+        "width": 79,
+        "height": 23
+      },
+      "fare_box": {
+        "x": 1212,
+        "y": 360,
+        "width": 192,
+        "height": 155
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "4_13",
+      "source_stop_id": 4,
+      "destination_stop_id": 13,
+      "source_name": "Kazipara",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 57.0,
+      "distance_km": 10.0,
+      "source_box": {
+        "x": 671,
+        "y": 724,
+        "width": 69,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1380,
+        "y": 723,
+        "width": 84,
+        "height": 30
+      },
+      "fare_box": {
+        "x": 1173,
+        "y": 359,
+        "width": 219,
+        "height": 144
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_6",
+      "source_stop_id": 5,
+      "destination_stop_id": 6,
+      "source_name": "Shewrapara",
+      "destination_name": "Farmgate",
+      "amount": 12.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 744,
+        "y": 494,
+        "width": 69,
+        "height": 30
+      },
+      "destination_box": {
+        "x": 818,
+        "y": 498,
+        "width": 62,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 1203,
+        "y": 374,
+        "width": 158,
+        "height": 165
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_7",
+      "source_stop_id": 5,
+      "destination_stop_id": 7,
+      "source_name": "Shewrapara",
+      "destination_name": "Shahbag",
+      "amount": 17.0,
+      "distance_km": 5.0,
+      "source_box": {
+        "x": 745,
+        "y": 523,
+        "width": 67,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 887,
+        "y": 526,
+        "width": 66,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 1180,
+        "y": 346,
+        "width": 190,
+        "height": 133
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_8",
+      "source_stop_id": 5,
+      "destination_stop_id": 8,
+      "source_name": "Shewrapara",
+      "destination_name": "Paltan",
+      "amount": 22.0,
+      "distance_km": 6.0,
+      "source_box": {
+        "x": 745,
+        "y": 552,
+        "width": 67,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 961,
+        "y": 551,
+        "width": 69,
+        "height": 27
+      },
+      "fare_box": {
+        "x": 1196,
+        "y": 354,
+        "width": 191,
+        "height": 180
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_9",
+      "source_stop_id": 5,
+      "destination_stop_id": 9,
+      "source_name": "Shewrapara",
+      "destination_name": "Gulistan",
+      "amount": 25.0,
+      "distance_km": 7.0,
+      "source_box": {
+        "x": 744,
+        "y": 579,
+        "width": 69,
+        "height": 27
+      },
+      "destination_box": {
+        "x": 1032,
+        "y": 581,
+        "width": 73,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1228,
+        "y": 342,
+        "width": 213,
+        "height": 172
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_10",
+      "source_stop_id": 5,
+      "destination_stop_id": 10,
+      "source_name": "Shewrapara",
+      "destination_name": "Tikatuli",
+      "amount": 28.0,
+      "distance_km": 8.0,
+      "source_box": {
+        "x": 743,
+        "y": 612,
+        "width": 68,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1104,
+        "y": 610,
+        "width": 75,
+        "height": 29
+      },
+      "fare_box": {
+        "x": 1179,
+        "y": 338,
+        "width": 230,
+        "height": 145
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_11",
+      "source_stop_id": 5,
+      "destination_stop_id": 11,
+      "source_name": "Shewrapara",
+      "destination_name": "Jatrabari",
+      "amount": 33.0,
+      "distance_km": 8.0,
+      "source_box": {
+        "x": 741,
+        "y": 666,
+        "width": 73,
+        "height": 29
+      },
+      "destination_box": {
+        "x": 1244,
+        "y": 665,
+        "width": 72,
+        "height": 32
+      },
+      "fare_box": {
+        "x": 1191,
+        "y": 335,
+        "width": 211,
+        "height": 187
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_12",
+      "source_stop_id": 5,
+      "destination_stop_id": 12,
+      "source_name": "Shewrapara",
+      "destination_name": "Signboard",
+      "amount": 46.0,
+      "distance_km": 9.0,
+      "source_box": {
+        "x": 744,
+        "y": 696,
+        "width": 70,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1312,
+        "y": 698,
+        "width": 78,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1160,
+        "y": 423,
+        "width": 249,
+        "height": 155
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "5_13",
+      "source_stop_id": 5,
+      "destination_stop_id": 13,
+      "source_name": "Shewrapara",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 56.0,
+      "distance_km": 10.0,
+      "source_box": {
+        "x": 742,
+        "y": 726,
+        "width": 72,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1379,
+        "y": 723,
+        "width": 88,
+        "height": 29
+      },
+      "fare_box": {
+        "x": 1254,
+        "y": 403,
+        "width": 212,
+        "height": 168
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "6_7",
+      "source_stop_id": 6,
+      "destination_stop_id": 7,
+      "source_name": "Farmgate",
+      "destination_name": "Shahbag",
+      "amount": 10.0,
+      "distance_km": 2.0,
+      "source_box": {
+        "x": 814,
+        "y": 522,
+        "width": 70,
+        "height": 28
+      },
+      "destination_box": {
+        "x": 889,
+        "y": 527,
+        "width": 66,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 1280,
+        "y": 415,
+        "width": 198,
+        "height": 175
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "6_8",
+      "source_stop_id": 6,
+      "destination_stop_id": 8,
+      "source_name": "Farmgate",
+      "destination_name": "Paltan",
+      "amount": 11.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 815,
+        "y": 554,
+        "width": 67,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 960,
+        "y": 549,
+        "width": 76,
+        "height": 29
+      },
+      "fare_box": {
+        "x": 1246,
+        "y": 411,
+        "width": 184,
+        "height": 149
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "6_9",
+      "source_stop_id": 6,
+      "destination_stop_id": 9,
+      "source_name": "Farmgate",
+      "destination_name": "Gulistan",
+      "amount": 13.0,
+      "distance_km": 4.9,
+      "source_box": {
+        "x": 814,
+        "y": 579,
+        "width": 69,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1033,
+        "y": 578,
+        "width": 73,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 1261,
+        "y": 412,
+        "width": 148,
+        "height": 145
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "6_10",
+      "source_stop_id": 6,
+      "destination_stop_id": 10,
+      "source_name": "Farmgate",
+      "destination_name": "Tikatuli",
+      "amount": 16.0,
+      "distance_km": 6.0,
+      "source_box": {
+        "x": 816,
+        "y": 608,
+        "width": 64,
+        "height": 28
+      },
+      "destination_box": {
+        "x": 1106,
+        "y": 610,
+        "width": 75,
+        "height": 29
+      },
+      "fare_box": {
+        "x": 1260,
+        "y": 419,
+        "width": 164,
+        "height": 156
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "6_11",
+      "source_stop_id": 6,
+      "destination_stop_id": 11,
+      "source_name": "Farmgate",
+      "destination_name": "Jatrabari",
+      "amount": 22.0,
+      "distance_km": 6.9,
+      "source_box": {
+        "x": 816,
+        "y": 665,
+        "width": 66,
+        "height": 30
+      },
+      "destination_box": {
+        "x": 1244,
+        "y": 668,
+        "width": 72,
+        "height": 26
+      },
+      "fare_box": {
+        "x": 1244,
+        "y": 427,
+        "width": 144,
+        "height": 143
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "6_12",
+      "source_stop_id": 6,
+      "destination_stop_id": 12,
+      "source_name": "Farmgate",
+      "destination_name": "Signboard",
+      "amount": 34.0,
+      "distance_km": 8.0,
+      "source_box": {
+        "x": 816,
+        "y": 697,
+        "width": 66,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1312,
+        "y": 698,
+        "width": 78,
+        "height": 27
+      },
+      "fare_box": {
+        "x": 1204,
+        "y": 421,
+        "width": 265,
+        "height": 213
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "6_13",
+      "source_stop_id": 6,
+      "destination_stop_id": 13,
+      "source_name": "Farmgate",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 44.0,
+      "distance_km": 9.0,
+      "source_box": {
+        "x": 816,
+        "y": 725,
+        "width": 68,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1377,
+        "y": 722,
+        "width": 90,
+        "height": 32
+      },
+      "fare_box": {
+        "x": 1272,
+        "y": 422,
+        "width": 181,
+        "height": 173
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "7_8",
+      "source_stop_id": 7,
+      "destination_stop_id": 8,
+      "source_name": "Shahbag",
+      "destination_name": "Paltan",
+      "amount": 10.0,
+      "distance_km": 2.0,
+      "source_box": {
+        "x": 887,
+        "y": 552,
+        "width": 69,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 964,
+        "y": 554,
+        "width": 52,
+        "height": 20
+      },
+      "fare_box": {
+        "x": 1240,
+        "y": 436,
+        "width": 170,
+        "height": 113
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "7_9",
+      "source_stop_id": 7,
+      "destination_stop_id": 9,
+      "source_name": "Shahbag",
+      "destination_name": "Gulistan",
+      "amount": 10.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 889,
+        "y": 582,
+        "width": 66,
+        "height": 28
+      },
+      "destination_box": {
+        "x": 1031,
+        "y": 582,
+        "width": 73,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1232,
+        "y": 418,
+        "width": 190,
+        "height": 151
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "7_10",
+      "source_stop_id": 7,
+      "destination_stop_id": 10,
+      "source_name": "Shahbag",
+      "destination_name": "Tikatuli",
+      "amount": 10.0,
+      "distance_km": 4.0,
+      "source_box": {
+        "x": 889,
+        "y": 610,
+        "width": 69,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 1107,
+        "y": 611,
+        "width": 63,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 1261,
+        "y": 513,
+        "width": 179,
+        "height": 123
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "7_11",
+      "source_stop_id": 7,
+      "destination_stop_id": 11,
+      "source_name": "Shahbag",
+      "destination_name": "Jatrabari",
+      "amount": 16.0,
+      "distance_km": 5.9,
+      "source_box": {
+        "x": 888,
+        "y": 665,
+        "width": 69,
+        "height": 30
+      },
+      "destination_box": {
+        "x": 1241,
+        "y": 668,
+        "width": 74,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 1244,
+        "y": 421,
+        "width": 154,
+        "height": 159
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "7_12",
+      "source_stop_id": 7,
+      "destination_stop_id": 12,
+      "source_name": "Shahbag",
+      "destination_name": "Signboard",
+      "amount": 28.0,
+      "distance_km": 7.0,
+      "source_box": {
+        "x": 884,
+        "y": 698,
+        "width": 72,
+        "height": 21
+      },
+      "destination_box": {
+        "x": 1312,
+        "y": 694,
+        "width": 75,
+        "height": 31
+      },
+      "fare_box": {
+        "x": 1275,
+        "y": 502,
+        "width": 180,
+        "height": 137
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "7_13",
+      "source_stop_id": 7,
+      "destination_stop_id": 13,
+      "source_name": "Shahbag",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 38.0,
+      "distance_km": 8.0,
+      "source_box": {
+        "x": 887,
+        "y": 726,
+        "width": 65,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1381,
+        "y": 723,
+        "width": 87,
+        "height": 35
+      },
+      "fare_box": {
+        "x": 1320,
+        "y": 519,
+        "width": 151,
+        "height": 110
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "8_9",
+      "source_stop_id": 8,
+      "destination_stop_id": 9,
+      "source_name": "Paltan",
+      "destination_name": "Gulistan",
+      "amount": 10.0,
+      "distance_km": 2.0,
+      "source_box": {
+        "x": 958,
+        "y": 580,
+        "width": 76,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1040,
+        "y": 583,
+        "width": 67,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1320,
+        "y": 498,
+        "width": 158,
+        "height": 141
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "8_10",
+      "source_stop_id": 8,
+      "destination_stop_id": 10,
+      "source_name": "Paltan",
+      "destination_name": "Tikatuli",
+      "amount": 10.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 960,
+        "y": 612,
+        "width": 68,
+        "height": 22
+      },
+      "destination_box": {
+        "x": 1106,
+        "y": 606,
+        "width": 69,
+        "height": 32
+      },
+      "fare_box": {
+        "x": 1252,
+        "y": 413,
+        "width": 200,
+        "height": 185
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "8_11",
+      "source_stop_id": 8,
+      "destination_stop_id": 11,
+      "source_name": "Paltan",
+      "destination_name": "Jatrabari",
+      "amount": 11.0,
+      "distance_km": 4.1,
+      "source_box": {
+        "x": 959,
+        "y": 667,
+        "width": 69,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1245,
+        "y": 667,
+        "width": 75,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1283,
+        "y": 413,
+        "width": 177,
+        "height": 170
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "8_12",
+      "source_stop_id": 8,
+      "destination_stop_id": 12,
+      "source_name": "Paltan",
+      "destination_name": "Signboard",
+      "amount": 23.0,
+      "distance_km": 7.0,
+      "source_box": {
+        "x": 960,
+        "y": 695,
+        "width": 69,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1313,
+        "y": 696,
+        "width": 65,
+        "height": 30
+      },
+      "fare_box": {
+        "x": 1224,
+        "y": 408,
+        "width": 176,
+        "height": 166
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "8_13",
+      "source_stop_id": 8,
+      "destination_stop_id": 13,
+      "source_name": "Paltan",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 33.0,
+      "distance_km": 8.0,
+      "source_box": {
+        "x": 957,
+        "y": 725,
+        "width": 75,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1376,
+        "y": 722,
+        "width": 92,
+        "height": 32
+      },
+      "fare_box": {
+        "x": 1262,
+        "y": 412,
+        "width": 221,
+        "height": 201
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "9_10",
+      "source_stop_id": 9,
+      "destination_stop_id": 10,
+      "source_name": "Gulistan",
+      "destination_name": "Tikatuli",
+      "amount": 10.0,
+      "distance_km": 2.0,
+      "source_box": {
+        "x": 1034,
+        "y": 610,
+        "width": 67,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1108,
+        "y": 610,
+        "width": 74,
+        "height": 25
+      },
+      "fare_box": {
+        "x": 1281,
+        "y": 406,
+        "width": 183,
+        "height": 172
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "9_11",
+      "source_stop_id": 9,
+      "destination_stop_id": 11,
+      "source_name": "Gulistan",
+      "destination_name": "Jatrabari",
+      "amount": 10.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 1031,
+        "y": 668,
+        "width": 73,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1243,
+        "y": 668,
+        "width": 78,
+        "height": 22
+      },
+      "fare_box": {
+        "x": 1223,
+        "y": 423,
+        "width": 245,
+        "height": 140
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "9_12",
+      "source_stop_id": 9,
+      "destination_stop_id": 12,
+      "source_name": "Gulistan",
+      "destination_name": "Signboard",
+      "amount": 21.0,
+      "distance_km": 5.0,
+      "source_box": {
+        "x": 1031,
+        "y": 698,
+        "width": 72,
+        "height": 26
+      },
+      "destination_box": {
+        "x": 1314,
+        "y": 698,
+        "width": 82,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 1186,
+        "y": 419,
+        "width": 169,
+        "height": 136
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "9_13",
+      "source_stop_id": 9,
+      "destination_stop_id": 13,
+      "source_name": "Gulistan",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 31.0,
+      "distance_km": 6.0,
+      "source_box": {
+        "x": 1032,
+        "y": 727,
+        "width": 68,
+        "height": 23
+      },
+      "destination_box": {
+        "x": 1381,
+        "y": 725,
+        "width": 85,
+        "height": 33
+      },
+      "fare_box": {
+        "x": 1324,
+        "y": 514,
+        "width": 149,
+        "height": 132
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "10_11",
+      "source_stop_id": 10,
+      "destination_stop_id": 11,
+      "source_name": "Tikatuli",
+      "destination_name": "Jatrabari",
+      "amount": 10.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 1108,
+        "y": 646,
+        "width": 64,
+        "height": 17
+      },
+      "destination_box": {
+        "x": 1246,
+        "y": 667,
+        "width": 75,
+        "height": 24
+      },
+      "fare_box": {
+        "x": 1288,
+        "y": 487,
+        "width": 152,
+        "height": 131
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "10_12",
+      "source_stop_id": 10,
+      "destination_stop_id": 12,
+      "source_name": "Tikatuli",
+      "destination_name": "Signboard",
+      "amount": 18.0,
+      "distance_km": 4.0,
+      "source_box": {
+        "x": 1107,
+        "y": 695,
+        "width": 63,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1312,
+        "y": 695,
+        "width": 83,
+        "height": 30
+      },
+      "fare_box": {
+        "x": 1268,
+        "y": 498,
+        "width": 251,
+        "height": 149
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "10_13",
+      "source_stop_id": 10,
+      "destination_stop_id": 13,
+      "source_name": "Tikatuli",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 28.0,
+      "distance_km": 5.0,
+      "source_box": {
+        "x": 1105,
+        "y": 726,
+        "width": 67,
+        "height": 28
+      },
+      "destination_box": {
+        "x": 1378,
+        "y": 722,
+        "width": 86,
+        "height": 35
+      },
+      "fare_box": {
+        "x": 1268,
+        "y": 488,
+        "width": 194,
+        "height": 139
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "11_12",
+      "source_stop_id": 11,
+      "destination_stop_id": 12,
+      "source_name": "Jatrabari",
+      "destination_name": "Signboard",
+      "amount": 12.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 1244,
+        "y": 698,
+        "width": 64,
+        "height": 24
+      },
+      "destination_box": {
+        "x": 1316,
+        "y": 697,
+        "width": 76,
+        "height": 28
+      },
+      "fare_box": {
+        "x": 1300,
+        "y": 505,
+        "width": 151,
+        "height": 133
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "11_13",
+      "source_stop_id": 11,
+      "destination_stop_id": 13,
+      "source_name": "Jatrabari",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 23.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 1248,
+        "y": 727,
+        "width": 58,
+        "height": 25
+      },
+      "destination_box": {
+        "x": 1380,
+        "y": 725,
+        "width": 83,
+        "height": 27
+      },
+      "fare_box": {
+        "x": 1273,
+        "y": 505,
+        "width": 226,
+        "height": 137
+      },
+      "is_mapped": true
+    },
+    {
+      "cell_id": "12_13",
+      "source_stop_id": 12,
+      "destination_stop_id": 13,
+      "source_name": "Signboard",
+      "destination_name": "Kanchpur Bridge",
+      "amount": 10.0,
+      "distance_km": 3.0,
+      "source_box": {
+        "x": 1314,
+        "y": 724,
+        "width": 60,
+        "height": 28
+      },
+      "destination_box": {
+        "x": 1383,
+        "y": 722,
+        "width": 81,
+        "height": 34
+      },
+      "fare_box": {
+        "x": 1298,
+        "y": 506,
+        "width": 162,
+        "height": 146
+      },
+      "is_mapped": true
+    }
+  ]
+}

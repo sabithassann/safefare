@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "route_id": "kalsi_to_kanchpur_bridge_test_1789709438",
+      "route_name": "Kalsi to Kanchpur Bridge Test",
+      "route_number": "A-101",
+      "total_stops": 13,
+      "total_cells": 78,
+      "mapped_cells": 78,
+      "pdf_filename": "chartfare.pdf",
+      "created_at": "2026-09-18T11:30:38.879224"
+    }
+  ]
+}

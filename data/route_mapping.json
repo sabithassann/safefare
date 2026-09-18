@@ -1,0 +1,216 @@
+{
+    "stops": {
+        "mirpur_10": {
+            "x": 50,
+            "y": 150,
+            "width": 50,
+            "height": 30
+        },
+        "kazipara": {
+            "x": 50,
+            "y": 180,
+            "width": 50,
+            "height": 30
+        },
+        "shewrapara": {
+            "x": 50,
+            "y": 210,
+            "width": 50,
+            "height": 30
+        },
+        "agargaon": {
+            "x": 50,
+            "y": 240,
+            "width": 50,
+            "height": 30
+        },
+        "farmgate": {
+            "x": 50,
+            "y": 270,
+            "width": 50,
+            "height": 30
+        }
+    },
+    "fares": {
+        "mirpur_10_kazipara": {
+            "amount": 5.0,
+            "box": {
+                "x": 150,
+                "y": 150,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "mirpur_10_shewrapara": {
+            "amount": 10.0,
+            "box": {
+                "x": 200,
+                "y": 150,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "mirpur_10_agargaon": {
+            "amount": 15.0,
+            "box": {
+                "x": 250,
+                "y": 150,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "mirpur_10_farmgate": {
+            "amount": 20.0,
+            "box": {
+                "x": 300,
+                "y": 150,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "kazipara_mirpur_10": {
+            "amount": 5.0,
+            "box": {
+                "x": 100,
+                "y": 180,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "kazipara_shewrapara": {
+            "amount": 5.0,
+            "box": {
+                "x": 200,
+                "y": 180,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "kazipara_agargaon": {
+            "amount": 10.0,
+            "box": {
+                "x": 250,
+                "y": 180,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "kazipara_farmgate": {
+            "amount": 15.0,
+            "box": {
+                "x": 300,
+                "y": 180,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "shewrapara_mirpur_10": {
+            "amount": 10.0,
+            "box": {
+                "x": 100,
+                "y": 210,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "shewrapara_kazipara": {
+            "amount": 5.0,
+            "box": {
+                "x": 150,
+                "y": 210,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "shewrapara_agargaon": {
+            "amount": 5.0,
+            "box": {
+                "x": 250,
+                "y": 210,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "shewrapara_farmgate": {
+            "amount": 10.0,
+            "box": {
+                "x": 300,
+                "y": 210,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "agargaon_mirpur_10": {
+            "amount": 15.0,
+            "box": {
+                "x": 100,
+                "y": 240,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "agargaon_kazipara": {
+            "amount": 10.0,
+            "box": {
+                "x": 150,
+                "y": 240,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "agargaon_shewrapara": {
+            "amount": 5.0,
+            "box": {
+                "x": 200,
+                "y": 240,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "agargaon_farmgate": {
+            "amount": 5.0,
+            "box": {
+                "x": 300,
+                "y": 240,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "farmgate_mirpur_10": {
+            "amount": 20.0,
+            "box": {
+                "x": 100,
+                "y": 270,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "farmgate_kazipara": {
+            "amount": 15.0,
+            "box": {
+                "x": 150,
+                "y": 270,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "farmgate_shewrapara": {
+            "amount": 10.0,
+            "box": {
+                "x": 200,
+                "y": 270,
+                "width": 50,
+                "height": 30
+            }
+        },
+        "farmgate_agargaon": {
+            "amount": 5.0,
+            "box": {
+                "x": 250,
+                "y": 270,
+                "width": 50,
+                "height": 30
+            }
+        }
+    }
+}
