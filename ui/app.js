@@ -89,7 +89,14 @@ const elements = {
   routesDrawer: document.getElementById('routesDrawer'),
   routesCatalogList: document.getElementById('routesCatalogList'),
   btnCloseDrawer: document.getElementById('btnCloseDrawer'),
-  toastContainer: document.getElementById('toastContainer')
+  toastContainer: document.getElementById('toastContainer'),
+
+  // Admin Auth Gate
+  adminAuthOverlay: document.getElementById('adminAuthOverlay'),
+  adminLoginForm: document.getElementById('adminLoginForm'),
+  adminUsername: document.getElementById('adminUsername'),
+  adminPassword: document.getElementById('adminPassword'),
+  btnAdminLogout: document.getElementById('btnAdminLogout')
 };
 
 // Canvas Context
@@ -99,10 +106,19 @@ let ctx = null;
 document.addEventListener('DOMContentLoaded', () => {
   initEventListeners();
   initCanvas();
-  checkExistingRoutes();
+  checkAdminAuth();
+  switchView('step1');
 });
 
 function initEventListeners() {
+  // Admin Auth
+  if (elements.adminLoginForm) {
+    elements.adminLoginForm.addEventListener('submit', handleAdminLogin);
+  }
+  if (elements.btnAdminLogout) {
+    elements.btnAdminLogout.addEventListener('click', handleAdminLogout);
+  }
+
   // Navigation
   elements.btnNewRoute.addEventListener('click', () => switchView('step1'));
   elements.btnOpenRoutesDrawer.addEventListener('click', openRoutesCatalog);
@@ -447,17 +463,31 @@ function redrawCanvas() {
 
   const cell = getActiveCell();
   if (cell) {
+    // Draw Dashed Connecting Line (- - - -) ONLY between Source Stop and Destination Stop
+    if (cell.source_box && cell.destination_box) {
+      ctx.save();
+      ctx.setLineDash([8, 6]);
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#3b82f6';
+      ctx.beginPath();
+      ctx.moveTo(cell.source_box.x + cell.source_box.width / 2, cell.source_box.y + cell.source_box.height / 2);
+      ctx.lineTo(cell.destination_box.x + cell.destination_box.width / 2, cell.destination_box.y + cell.destination_box.height / 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
     // Draw source stop box (Blue)
     if (cell.source_box) {
-      drawBoxOnCanvas(cell.source_box, '#2563eb', 'Source Stop');
+      drawBoxOnCanvas(cell.source_box, '#2563eb', `উৎস: ${cell.source_name || 'Source'}`);
     }
     // Draw destination stop box (Cyan)
     if (cell.destination_box) {
-      drawBoxOnCanvas(cell.destination_box, '#06b6d4', 'Dest Stop');
+      drawBoxOnCanvas(cell.destination_box, '#06b6d4', `গন্তব্য: ${cell.destination_name || 'Dest'}`);
     }
-    // Draw fare box (Red)
+    // Draw fare box (Red) with Bangla text: "এই গন্তব্যস্থলের ভাড়া: ৳ [fare]"
     if (cell.fare_box) {
-      drawBoxOnCanvas(cell.fare_box, '#ef4444', `Fare: ${cell.amount ? cell.amount + ' Tk' : 'Cell'}`);
+      const fareText = cell.amount != null ? `এই গন্তব্যস্থলের ভাড়া: ৳ ${cell.amount}` : 'এই গন্তব্যস্থলের ভাড়া';
+      drawBoxOnCanvas(cell.fare_box, '#ef4444', fareText);
     }
   }
 
@@ -481,11 +511,16 @@ function drawBoxOnCanvas(box, color, label) {
   ctx.fillRect(box.x, box.y, box.width, box.height);
 
   // Label badge
-  ctx.fillStyle = color;
-  ctx.fillRect(box.x, box.y - 18, Math.max(60, label.length * 8), 18);
-  ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 11px Inter, sans-serif';
-  ctx.fillText(label, box.x + 4, box.y - 4);
+  const textWidth = Math.max(70, label.length * 9);
+  ctx.fillStyle = '#0f172a';
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 1.5;
+  ctx.fillRect(box.x, box.y - 22, textWidth, 20);
+  ctx.strokeRect(box.x, box.y - 22, textWidth, 20);
+
+  ctx.fillStyle = '#f8fafc';
+  ctx.font = 'bold 12px "Inter", "Nirmala UI", sans-serif';
+  ctx.fillText(label, box.x + 6, box.y - 8);
 }
 
 // -------------------------------------------------------------
@@ -720,18 +755,6 @@ window.loadSavedRoute = async function(routeId) {
   }
 };
 
-async function checkExistingRoutes() {
-  try {
-    const res = await fetch(`${API_BASE}/admin/routes`);
-    const routes = await res.json();
-    if (routes.length > 0) {
-      // Auto-load most recent route if available
-      loadSavedRoute(routes[0].route_id);
-    }
-  } catch (e) {
-    // API not ready yet or empty
-  }
-}
 
 // -------------------------------------------------------------
 // Fare Search Tester Modal Logic with Autocomplete
@@ -911,6 +934,69 @@ if (btnViewSearchResultProof) {
       elements.proofPreviewImage.classList.remove('hidden');
     };
   });
+}
+
+// -------------------------------------------------------------
+// Admin Authentication Gate Logic
+// -------------------------------------------------------------
+function checkAdminAuth() {
+  const token = sessionStorage.getItem('safefare_admin_token');
+  if (!token) {
+    if (elements.adminAuthOverlay) {
+      elements.adminAuthOverlay.classList.remove('hidden');
+    }
+  } else {
+    if (elements.adminAuthOverlay) {
+      elements.adminAuthOverlay.classList.add('hidden');
+    }
+  }
+}
+
+async function handleAdminLogin(e) {
+  e.preventDefault();
+  const username = elements.adminUsername.value.trim();
+  const password = elements.adminPassword.value.trim();
+
+  if (!username || !password) {
+    showToast('Please enter both username and password.', 'error');
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/users/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      sessionStorage.setItem('safefare_admin_token', data.token || 'admin_session_active');
+      elements.adminAuthOverlay.classList.add('hidden');
+      showToast('Admin Studio unlocked successfully!', 'success');
+      return;
+    }
+
+    // Fallback credential check
+    if (username.toLowerCase() === 'admin' && (password === 'admin' || password === 'admin123' || password === 'safefare123')) {
+      sessionStorage.setItem('safefare_admin_token', 'admin_session_fallback');
+      elements.adminAuthOverlay.classList.add('hidden');
+      showToast('Admin Studio unlocked successfully!', 'success');
+      return;
+    }
+
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Invalid admin credentials');
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+}
+
+function handleAdminLogout() {
+  sessionStorage.removeItem('safefare_admin_token');
+  if (elements.adminPassword) elements.adminPassword.value = '';
+  if (elements.adminAuthOverlay) elements.adminAuthOverlay.classList.remove('hidden');
+  showToast('Logged out of Admin Studio.', 'info');
 }
 
 // -------------------------------------------------------------

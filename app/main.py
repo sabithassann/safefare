@@ -35,7 +35,8 @@ if os.path.exists(ui_dir):
 def root():
     return {
         "message": "Welcome to SafeFare API.",
-        "swagger_docs": "/docs",
-        "admin_ui": "/ui/index.html"
+        "user_ui": "/ui/user.html",
+        "admin_ui": "/ui/index.html",
+        "swagger_docs": "/docs"
     }
 

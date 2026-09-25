@@ -5,7 +5,7 @@ import time
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 import fitz  # PyMuPDF
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import io
 from fastapi import HTTPException, UploadFile
 
@@ -289,6 +289,43 @@ def get_route_page_image(route_id: str, page_num: int = 0, zoom: float = 2.0) ->
     return pix.tobytes("png")
 
 
+def _get_bangla_font(size: int = 18):
+    font_paths = [
+        "C:/Windows/Fonts/NirmalaB.ttf",
+        "C:/Windows/Fonts/Nirmala.ttf",
+        "C:/Windows/Fonts/vrinda.ttf",
+        "C:/Windows/Fonts/arialbd.ttf",
+        "C:/Windows/Fonts/arial.ttf",
+    ]
+    for p in font_paths:
+        if os.path.exists(p):
+            try:
+                return ImageFont.truetype(p, size)
+            except Exception:
+                continue
+    return ImageFont.load_default()
+
+
+def _draw_dashed_line(draw: ImageDraw.ImageDraw, pt1: tuple, pt2: tuple, color="#2563eb", width=3, dash_len=10, space_len=6):
+    x1, y1 = pt1
+    x2, y2 = pt2
+    dist = ((x2 - x1)**2 + (y2 - y1)**2)**0.5
+    if dist == 0:
+        return
+    dx = (x2 - x1) / dist
+    dy = (y2 - y1) / dist
+    
+    curr = 0
+    while curr < dist:
+        start_x = x1 + dx * curr
+        start_y = y1 + dy * curr
+        end_curr = min(curr + dash_len, dist)
+        end_x = x1 + dx * end_curr
+        end_y = y1 + dy * end_curr
+        draw.line([(start_x, start_y), (end_x, end_y)], fill=color, width=width)
+        curr += dash_len + space_len
+
+
 def render_cell_preview(route_id: str, cell_id: str, page_num: int = 0, zoom: float = 2.0) -> bytes:
     route = get_route(route_id)
     cell = next((c for c in route.cells if c.cell_id == cell_id), None)
@@ -299,6 +336,34 @@ def render_cell_preview(route_id: str, cell_id: str, page_num: int = 0, zoom: fl
     img = Image.open(io.BytesIO(img_bytes))
     draw = ImageDraw.Draw(img)
 
+    # 1. Calculate centers of boxes
+    src_pt = None
+    dest_pt = None
+    fare_pt = None
+
+    if cell.source_box:
+        src_pt = (
+            cell.source_box.x + cell.source_box.width // 2,
+            cell.source_box.y + cell.source_box.height // 2
+        )
+    if cell.destination_box:
+        dest_pt = (
+            cell.destination_box.x + cell.destination_box.width // 2,
+            cell.destination_box.y + cell.destination_box.height // 2
+        )
+    if cell.fare_box:
+        fare_pt = (
+            cell.fare_box.x + cell.fare_box.width // 2,
+            cell.fare_box.y + cell.fare_box.height // 2
+        )
+
+    # 2. Draw Dashed Connecting Line (- - - -) ONLY between Source Stop and Destination Stop
+    if src_pt and dest_pt:
+        _draw_dashed_line(draw, src_pt, dest_pt, color="#2563eb", width=3, dash_len=10, space_len=6)
+        draw.ellipse([src_pt[0]-4, src_pt[1]-4, src_pt[0]+4, src_pt[1]+4], fill="#2563eb")
+        draw.ellipse([dest_pt[0]-4, dest_pt[1]-4, dest_pt[0]+4, dest_pt[1]+4], fill="#0284c7")
+
+    # 3. Draw Bounding Boxes
     def draw_box(box: Optional[BoundingBox], outline="blue", width=3):
         if not box:
             return
@@ -308,12 +373,62 @@ def render_cell_preview(route_id: str, cell_id: str, page_num: int = 0, zoom: fl
             width=width
         )
 
-    # Highlight source & destination in blue, fare cell in red
     draw_box(cell.source_box, outline="#2563eb", width=3)
-    draw_box(cell.destination_box, outline="#2563eb", width=3)
+    draw_box(cell.destination_box, outline="#0284c7", width=3)
     draw_box(cell.fare_box, outline="#ef4444", width=4)
+
+    # 4. Draw Static Bangla Word + Dynamic Fare Badge: "এই গন্তব্যস্থলের ভাড়া: ৳ [fare]"
+    if cell.fare_box:
+        fare_val = cell.amount
+        if fare_val is not None:
+            fare_str = f"{int(fare_val)}" if float(fare_val).is_integer() else f"{fare_val:.2f}"
+            badge_text = f"এই গন্তব্যস্থলের ভাড়া: ৳ {fare_str}"
+        else:
+            badge_text = "এই গন্তব্যস্থলের ভাড়া"
+
+        font = _get_bangla_font(size=max(16, int(18 * (zoom / 2.0))))
+
+        try:
+            bbox = draw.textbbox((0, 0), badge_text, font=font)
+            text_w = bbox[2] - bbox[0]
+            text_h = bbox[3] - bbox[1]
+        except Exception:
+            text_w = len(badge_text) * 10
+            text_h = 20
+
+        pad_x = 10
+        pad_y = 6
+        badge_w = text_w + pad_x * 2
+        badge_h = text_h + pad_y * 2
+
+        # Position above or below fare box
+        badge_x = cell.fare_box.x + (cell.fare_box.width - badge_w) // 2
+        badge_x = max(10, min(badge_x, img.width - badge_w - 10))
+
+        if cell.fare_box.y >= badge_h + 10:
+            badge_y = cell.fare_box.y - badge_h - 8
+        else:
+            badge_y = cell.fare_box.y + cell.fare_box.height + 8
+
+        # Draw badge background
+        draw.rounded_rectangle(
+            [badge_x, badge_y, badge_x + badge_w, badge_y + badge_h],
+            radius=6,
+            fill="#0f172a",
+            outline="#ef4444",
+            width=2
+        )
+
+        # Draw Bangla badge text
+        draw.text(
+            (badge_x + pad_x, badge_y + pad_y - 2),
+            badge_text,
+            font=font,
+            fill="#ffffff"
+        )
 
     output = io.BytesIO()
     img.save(output, format="PNG")
     output.seek(0)
     return output.read()
+

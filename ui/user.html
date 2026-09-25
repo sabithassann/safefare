@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>SafeFare | Official Bus Fare & Government Chart Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20">
+</head>
+<body class="dark-theme user-portal-body">
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar user-navbar">
+    <div class="nav-brand">
+      <div class="logo-badge">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+          <line x1="4" y1="22" x2="4" y2="15"></line>
+        </svg>
+      </div>
+      <div>
+        <h1 class="nav-title">SafeFare Commuter</h1>
+        <span class="nav-subtitle">Verified BRTA Transit Fare Portal</span>
+      </div>
+    </div>
+
+    <nav class="user-nav-links">
+      <a href="#searchSection" class="nav-link active">Fare Calculator</a>
+      <a href="#routesSection" class="nav-link">Browse Routes</a>
+      <a href="#guidelinesSection" class="nav-link">Fare Rules</a>
+      <a href="#helplineSection" class="nav-link">Helpline</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-secondary btn-admin-link" title="Open Admin Studio">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        Admin Portal
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Scrollable Content Area -->
+  <main class="user-main-container">
+
+    <!-- Hero Section -->
+    <section class="user-hero-section">
+      <div class="hero-badge">🇧🇩 Official Government Gazetted Rates</div>
+      <h2 class="hero-title">Know Your Exact Bus Fare.<br><span class="gradient-text">No Overcharging. Guaranteed Proof.</span></h2>
+      <p class="hero-desc">
+        Check government-approved bus fares across Dhaka city routes with direct visual proof from the official BRTA Fare Matrix Chart.
+      </p>
+    </section>
+
+    <!-- Search Engine Section -->
+    <section id="searchSection" class="user-search-section">
+      <div class="search-card">
+        <form id="commuterSearchForm" autocomplete="off">
+          <div class="search-inputs-grid">
+            
+            <!-- Origin Stop -->
+            <div class="form-group autocomplete-wrapper">
+              <label for="userSourceInput">
+                <span class="dot-indicator dot-green"></span> Origin / Boarding Stop <span class="required">*</span>
+              </label>
+              <div class="input-with-icon">
+                <input type="text" id="userSourceInput" placeholder="e.g., Mirpur-10, Kalsi, Farmgate..." autocomplete="off" required>
+                <button type="button" class="btn-clear-input hidden" id="btnClearSource">&times;</button>
+              </div>
+              <div id="userSourceSuggestions" class="suggestions-dropdown hidden"></div>
+            </div>
+
+            <!-- Swap Button -->
+            <div class="swap-button-wrapper">
+              <button type="button" id="btnSwapStops" class="btn-swap" title="Swap Origin and Destination">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Destination Stop -->
+            <div class="form-group autocomplete-wrapper">
+              <label for="userDestInput">
+                <span class="dot-indicator dot-red"></span> Destination / Drop-off Stop <span class="required">*</span>
+              </label>
+              <div class="input-with-icon">
+                <input type="text" id="userDestInput" placeholder="e.g., Shahbag, Gulistan, Kanchpur..." autocomplete="off" required>
+                <button type="button" class="btn-clear-input hidden" id="btnClearDest">&times;</button>
+              </div>
+              <div id="userDestSuggestions" class="suggestions-dropdown hidden"></div>
+            </div>
+
+            <!-- Route Selection (Optional) -->
+            <div class="form-group">
+              <label for="userRouteSelect">
+                <span class="dot-indicator dot-blue"></span> Bus Route (Optional)
+              </label>
+              <select id="userRouteSelect">
+                <option value="">All Registered Routes</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Quick Chips -->
+          <div class="quick-chips-row">
+            <span class="chips-label">Popular Trips:</span>
+            <div class="chips-list">
+              <button type="button" class="quick-chip" data-src="Kalsi" data-dest="Kanchpur Bridge">Kalsi ➔ Kanchpur Bridge</button>
+              <button type="button" class="quick-chip" data-src="Mirpur-10" data-dest="Shahbag">Mirpur-10 ➔ Shahbag</button>
+              <button type="button" class="quick-chip" data-src="Farmgate" data-dest="Gulistan">Farmgate ➔ Gulistan</button>
+              <button type="button" class="quick-chip" data-src="Shewrapara" data-dest="Jatrabari">Shewrapara ➔ Jatrabari</button>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="search-action-row">
+            <button type="submit" id="btnCalculateFare" class="btn btn-primary btn-search-hero">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              Calculate Government Fare
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Result Card -->
+      <div id="fareResultContainer" class="fare-result-container hidden">
+        <div class="result-card">
+          <div class="result-header">
+            <div>
+              <span class="result-badge-verified">✓ Verified BRTA Approved Fare</span>
+              <h3 id="resultRouteTitle" class="result-trip-title">Route Calculation</h3>
+            </div>
+            <div class="fare-display-box">
+              <span class="currency-symbol">৳</span>
+              <span id="resultFareAmount" class="fare-main-number">0.00</span>
+              <span class="fare-label">Regular Fare</span>
+            </div>
+          </div>
+
+          <div class="result-body-grid">
+            <div class="info-tile">
+              <span class="tile-label">Trip Distance</span>
+              <span id="resultDistance" class="tile-value font-mono">- km</span>
+            </div>
+            <div class="info-tile">
+              <span class="tile-label">Student Half-Pass</span>
+              <span id="resultStudentFare" class="tile-value text-success font-mono">৳ -</span>
+            </div>
+            <div class="info-tile">
+              <span class="tile-label">Rate Formula</span>
+              <span id="resultFormula" class="tile-value text-muted font-mono">৳2.50 / km (Min ৳10)</span>
+            </div>
+            <div class="info-tile">
+              <span class="tile-label">Official Status</span>
+              <span class="tile-value text-success">Gazetted Matrix</span>
+            </div>
+          </div>
+
+          <!-- Official Proof Action Button -->
+          <div class="result-footer-actions">
+            <button type="button" id="btnOpenOfficialProof" class="btn btn-success btn-proof-hero">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              View Official BRTA Fare Chart Proof
+            </button>
+            <span class="proof-hint">Shows exact pinpointed cell inside the government PDF document</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Routes Catalog Section -->
+    <section id="routesSection" class="user-content-section">
+      <div class="section-title-wrap">
+        <h2>Registered Bus Routes Catalog</h2>
+        <p class="text-muted">Browse all mapped transit lines, sequential stop checkpoints, and complete fare matrices.</p>
+      </div>
+
+      <div id="userRoutesGrid" class="routes-cards-grid">
+        <div class="loading-state">Loading registered routes...</div>
+      </div>
+    </section>
+
+    <!-- Government Guidelines & Rules Section -->
+    <section id="guidelinesSection" class="user-content-section">
+      <div class="section-title-wrap">
+        <h2>Government Fare Guidelines & Passenger Rights</h2>
+        <p class="text-muted">Summary of key BRTA transport regulations to protect commuters from fare extortion.</p>
+      </div>
+
+      <div class="guidelines-grid">
+        <div class="guide-card">
+          <div class="guide-icon">🛡️</div>
+          <h3>Statutory Minimum Fare</h3>
+          <p>For Dhaka city buses, the official minimum fare is fixed at <strong>৳ 10.00</strong>. No bus operator is permitted to charge more than the published distance rate for intermediate stops.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon">🎓</div>
+          <h3>Student 50% Half-Pass</h3>
+          <p>Students with valid institutional ID cards are legally entitled to <strong>50% discount</strong> on the gazetted fare between 7:00 AM and 8:00 PM on working days.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon">📑</div>
+          <h3>Chart Display Mandate</h3>
+          <p>Every public transport vehicle must prominently display the official government fare chart inside the bus cabin for passenger inspection.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon">⚖️</div>
+          <h3>No Arbitrary Overcharging</h3>
+          <p>Bus conductors are strictly prohibited from demanding arbitrary "waybill" fares not backed by official BRTA kilometer matrix charts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Helpline & Complaints Section -->
+    <section id="helplineSection" class="user-content-section helpline-section">
+      <div class="helpline-banner">
+        <div>
+          <h3>Encountered Overcharging or Refusal?</h3>
+          <p>Lodge immediate complaints with government regulatory agencies using SafeFare verified chart evidence.</p>
+        </div>
+        <div class="helpline-pills">
+          <div class="help-pill">
+            <span class="help-org">BRTA Hotline</span>
+            <span class="help-num">02-55007137</span>
+          </div>
+          <div class="help-pill">
+            <span class="help-org">Consumer Rights (DNCRP)</span>
+            <span class="help-num">16121</span>
+          </div>
+          <div class="help-pill">
+            <span class="help-org">National Emergency</span>
+            <span class="help-num">999</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Visual Proof Preview Modal -->
+  <div id="userProofModal" class="modal-backdrop hidden">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3 id="userProofModalTitle">Official BRTA Fare Chart Proof</h3>
+          <span class="modal-subtitle">Government approved table cell with highlighted coordinates</span>
+        </div>
+        <button type="button" class="btn-close" id="btnCloseUserProof">&times;</button>
+      </div>
+      <div class="modal-body preview-modal-body">
+        <div id="userProofLoading" class="loading-spinner">Generating official chart highlight...</div>
+        <img id="userProofImg" class="proof-img hidden" alt="Highlighted BRTA Chart Proof">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnCloseUserProof2" class="btn btn-secondary">Close Proof</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Route Stops Detail Modal -->
+  <div id="routeDetailModal" class="modal-backdrop hidden">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3 id="routeDetailTitle">Bus Route Details</h3>
+          <span id="routeDetailSubtitle" class="modal-subtitle">-</span>
+        </div>
+        <button type="button" class="btn-close" id="btnCloseRouteDetail">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4 style="margin-bottom: 12px; color: var(--text-main);">Sequential Bus Stops Checkpoints</h4>
+        <div id="routeDetailStopsList" class="stops-timeline">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnCloseRouteDetail2" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="userToastContainer" class="toast-container"></div>
+
+  <script src="user.js?v=20"></script>
+</body>
+</html>
